@@ -1,8 +1,26 @@
 <script setup lang="ts">
+import { type Ref } from "vue";
 import ItemComponent from "../components/ItemComponent.vue";
+import { ref } from "vue";
+import { type MotorExhibition } from "@/models/Motorcycle";
 
 const today = new Date();
 const actualDate = today.toLocaleDateString("pt-Br");
+
+const motorData: Ref<Array<MotorExhibition>> = ref([
+  {
+    "imgUrl": "/src/assets/images/Group 40.png",
+    "name": "Cross Rider 400"
+  },
+  {
+    "imgUrl": "/src/assets/images/Group 41.png",
+    "name": "Nimbus 1000"
+  },
+  {
+    "imgUrl": "/src/assets/images/Group 42.png",
+    "name": "Traveler 600"
+  }
+])
 </script>
 
 <template>
@@ -40,6 +58,10 @@ const actualDate = today.toLocaleDateString("pt-Br");
         </div>
       </div>
     </section>
+    <hr>
+    <section class="home-exhibition">
+      <ItemComponent v-for="motor in motorData" :imgUrl="motor.imgUrl" :name="motor.name"></ItemComponent>
+    </section>
   </main>
 </template>
 
@@ -59,7 +81,7 @@ const actualDate = today.toLocaleDateString("pt-Br");
   display: flex;
   flex-direction: column;
 
-  & > div {
+  &>div {
     margin: auto;
     width: fit-content;
     text-align: center;
@@ -68,11 +90,11 @@ const actualDate = today.toLocaleDateString("pt-Br");
     border-radius: 3px;
     padding: 1rem;
     font-size: 2em;
-    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif !important;
     font-weight: bolder;
     letter-spacing: 0.1em;
 
-    & > p {
+    &>p {
       font-size: 0.5em;
     }
   }
@@ -81,10 +103,16 @@ const actualDate = today.toLocaleDateString("pt-Br");
 .home-content {
   background-color: rgb(250, 250, 250);
   width: 100%;
-  height: 100vh;
+  height: 100%;
+
 
   & > div {
     padding: 5rem;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: space-around;
+    align-items: center;
   }
 }
 
@@ -95,20 +123,16 @@ const actualDate = today.toLocaleDateString("pt-Br");
   text-align: justify;
   // text-decoration: underline;
   padding: 2rem;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
   font-size: 1.3em;
 
-  & > img {
-    width: 40rem;
+  &>img {
+    width: 100%;
     border-radius: 0.7rem;
   }
 }
 
 .sinceContainer {
   width: 30%;
-  float: right;
 }
 
 .sinceTitle {
@@ -130,12 +154,22 @@ const actualDate = today.toLocaleDateString("pt-Br");
   border-radius: 10px;
 }
 
-.sinceText{
+.sinceText {
   background-color: white;
   border-radius: 1rem;
   padding: 1rem;
-  & > p {
+
+  &>p {
     font-size: 1.8em;
   }
 }
+
+.home-exhibition {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  background-color: rgb(250, 250, 250);
+}
+
 </style>

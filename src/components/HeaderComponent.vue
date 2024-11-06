@@ -10,11 +10,7 @@ const openMenuClick = () => {
 <template>
   <div class="header">
     <div>
-      <img
-        src="../assets/images/sandwich-icon.svg"
-        class="sandwich-icon"
-        v-on:click="openMenuClick()"
-      />
+      <img src="../assets/images/sandwich-icon.svg" class="sandwich-icon" v-on:click="openMenuClick()" />
       <div class="header-left" v-if="openMenu == true">
         <ul>
           <li>Chassis</li>
@@ -39,7 +35,7 @@ const openMenuClick = () => {
   align-items: center;
   padding: 0 1rem 0 1rem;
 
-  & > img{
+  &>img {
     width: 4rem;
   }
 }
@@ -48,37 +44,25 @@ const openMenuClick = () => {
   width: 3rem;
 }
 
+.header-left {
+  display: flex;
+  width: 50%;
+  height: 100%;
+  align-items: center;
 
-@media (max-width: 1024px) {
+  &>ul {
+    text-decoration: none;
+    list-style: none;
+    display: flex;
+    gap: 2rem;
 
-
-    .header-left {
-        z-index: 10;
-        position: absolute;
-        background-color: white;
-        border: 1px solid black;
-        border-radius: 5px;
-        padding: 2rem;
+    & > li{
+      cursor: pointer;
     }
+  }
 }
 
-@media (min-width: 1024px) {
-  .header-left {
-    display: flex;
-    width: 50%;
-    height: 100%;
-    align-items: center;
-
-    & > ul {
-      text-decoration: none;
-      list-style: none;
-      display: flex;
-      gap: 2rem;
-    }
-  }
-
-  .sandwich-icon {
-    display: none;
-  }
+.sandwich-icon {
+  display: none;
 }
 </style>

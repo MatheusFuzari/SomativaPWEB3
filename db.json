@@ -1,0 +1,52 @@
+{
+    "parts": {
+        "front": [
+            {
+                "imgUrl": "/src/assets/images/Frente-1.png",
+                "name": "Frente 1",
+                "price": 1200
+            },
+            {
+                "imgUrl": "/src/assets/images/Frente-2.png",
+                "name": "Frente 2",
+                "price": 1200
+            }
+        ],
+        "engine": [
+            {
+                "imgUrl": "/src/assets/images/Motor-1.png",
+                "name": "Motor 1",
+                "price": 1200
+            },
+            {
+                "imgUrl": "/src/assets/images/Motor-2.png",
+                "name": "Motor 2",
+                "price": 1200
+            }
+        ],
+        "frontTyre": [
+            {
+                "imgUrl": "/src/assets/images/RodaFrente-1.png",
+                "name": "RodaFrente 1",
+                "price": 1200
+            },
+            {
+                "imgUrl": "/src/assets/images/RodaFrente-2.png",
+                "name": "RodaFrente 2",
+                "price": 1200
+            }
+        ],
+        "rearTyre": [
+            {
+                "imgUrl": "/src/assets/images/RodaTraseira-1.png",
+                "name": "RodaTraseira 1",
+                "price": 1200
+            },
+            {
+                "imgUrl": "/src/assets/images/RodaTraseira-2.png",
+                "name": "RodaTraseira 2",
+                "price": 1200
+            }
+        ]
+    }
+}
