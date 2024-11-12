@@ -13,10 +13,8 @@ const openMenuClick = () => {
       <img src="../assets/images/sandwich-icon.svg" class="sandwich-icon" v-on:click="openMenuClick()" />
       <div class="header-left" v-if="openMenu == true">
         <ul>
-          <li>Chassis</li>
-          <li>Motorização</li>
-          <li>Tecnologia</li>
-          <li>Home</li>
+          <RouterLink to="/"><li>Home</li></RouterLink>
+          <RouterLink to="/change"><li>Montar</li></RouterLink>
           <li>Carrinho</li>
         </ul>
       </div>
@@ -38,6 +36,10 @@ const openMenuClick = () => {
   &>img {
     width: 4rem;
   }
+}
+
+a {
+  text-decoration: none;
 }
 
 .sandwich-icon {
